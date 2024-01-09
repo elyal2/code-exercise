@@ -55,10 +55,13 @@ public class Skill extends Audit {
 //    Idiomas (Languages)
     @ElementCollection
     @CollectionTable(name = "language_skills", joinColumns = @JoinColumn(name = "skill_id"))
+    @Builder.Default
+    @EqualsAndHashCode.Exclude
     private Set<Competency> languages = new HashSet<>();
 //    Ofimática (Office Automation)
     @ElementCollection
     @CollectionTable(name = "office_automation_skills", joinColumns = @JoinColumn(name = "skill_id"))
+    @Builder.Default
     private Set<Competency> officeAutomation = new HashSet<>();
 }
 
